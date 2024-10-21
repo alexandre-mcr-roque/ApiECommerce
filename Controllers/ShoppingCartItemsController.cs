@@ -80,7 +80,7 @@ namespace ApiECommerce.Controllers
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    "An error occured while processing the request.");
+                    "An error occurred while processing the request.");
             }
         }
 

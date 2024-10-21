@@ -117,7 +117,7 @@ namespace ApiECommerce.Controllers
                 catch (Exception)
                 {
                     await transaction.RollbackAsync();
-                    return BadRequest("An error occured while processing the order.");
+                    return BadRequest("An error occurred while processing the order.");
                 }
             }
         }
