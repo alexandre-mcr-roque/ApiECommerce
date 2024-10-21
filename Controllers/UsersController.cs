@@ -23,7 +23,7 @@ namespace ApiECommerce.Controllers
             _configuration = configuration;
         }
 
-        // POST api/Register
+        // POST api/Users/Register
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -41,7 +41,7 @@ namespace ApiECommerce.Controllers
             return StatusCode(StatusCodes.Status201Created);
         }
 
-        // POST api/Login
+        // POST api/Users/Login
         [HttpPost("[action]")]
         public async Task<IActionResult> Login([FromBody] User user)
         {
