@@ -88,6 +88,7 @@ namespace ApiECommerce
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
