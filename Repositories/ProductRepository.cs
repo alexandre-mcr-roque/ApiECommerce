@@ -15,21 +15,21 @@ namespace ApiECommerce.Repositories
 
         public async Task<IEnumerable<Product>> GetBestSellerProductsAsync()
         {
-            return await _appDbContext.Products
+            return await _appDbContext.Products.AsNoTracking()
                 .Where(p => p.BestSeller)
                 .ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetPopularProductsAsync()
         {
-            return await _appDbContext.Products
+            return await _appDbContext.Products.AsNoTracking()
                 .Where(p => p.Popular)
                 .ToListAsync();
         }
 
         public async Task<Product> GetProductDetailsAsync(int id)
         {
-            var productDetail = await _appDbContext.Products
+            var productDetail = await _appDbContext.Products.AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             //if (productDetail is null) throw new InvalidOperationException("The searched product does not exist");
@@ -39,7 +39,7 @@ namespace ApiECommerce.Repositories
 
         public async Task<IEnumerable<Product>> GetProductsByCategoryAsync(int categoryId)
         {
-            return await _appDbContext.Products
+            return await _appDbContext.Products.AsNoTracking()
                 .Where(p => p.CategoryId == categoryId)
                 .ToListAsync();
         }

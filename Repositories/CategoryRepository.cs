@@ -15,7 +15,7 @@ namespace ApiECommerce.Repositories
 
         public async Task<IEnumerable<Category>> GetCategoriesAsync()
         {
-            return await _dbContext.Categories
+            return await _dbContext.Categories.AsNoTracking()
                 .ToListAsync();
         }
     }
